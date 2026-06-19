@@ -1,0 +1,331 @@
+:root {
+    --bg-base: #050505;
+    --grid-color: rgba(255, 255, 255, 0.03);
+    --border-dim: #27272a;
+    --text-primary: #fafafa;
+    --text-secondary: #a1a1aa;
+    --accent-gold: #eab308;
+    --accent-gold-dim: rgba(234, 179, 8, 0.15);
+    --accent-green: #10b981;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* PCB Grid Background */
+.grid-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.layout {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+/* Header */
+.sys-header {
+    margin-bottom: 5rem;
+    position: relative;
+}
+
+.badge {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--accent-gold);
+    border: 1px solid var(--accent-gold);
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    max-width: 600px;
+}
+
+/* Progress Metrics */
+.metrics {
+    background: #09090b;
+    border: 1px solid var(--border-dim);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.metric-label {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.05em;
+}
+
+.progress-track {
+    height: 4px;
+    background: var(--border-dim);
+    width: 100%;
+    position: relative;
+}
+
+.progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--accent-gold);
+    width: 0%;
+    transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 0 0 10px var(--accent-gold-dim);
+}
+
+.progress-stats {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.25rem;
+    align-self: flex-end;
+    color: var(--accent-gold);
+}
+
+/* Data Bus Layout (Timeline) */
+.data-bus {
+    position: relative;
+    padding-left: 3rem;
+}
+
+/* The central bus line */
+.data-bus::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border-dim);
+}
+
+/* Node/Card */
+.node {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+/* Connection line from bus to node */
+.node::before {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: -3rem;
+    width: 3rem;
+    height: 2px;
+    background: var(--border-dim);
+    transition: background 0.3s ease;
+}
+
+/* Connection point on the bus */
+.node::after {
+    content: '';
+    position: absolute;
+    top: 21px;
+    left: -3rem;
+    width: 8px;
+    height: 8px;
+    background: var(--bg-base);
+    border: 2px solid var(--border-dim);
+    border-radius: 50%;
+    transform: translateX(-4px);
+    transition: all 0.3s ease;
+}
+
+.node-content {
+    background: #09090b;
+    border: 1px solid var(--border-dim);
+    padding: 2rem;
+    transition: border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.node:hover .node-content {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Completed State Styling */
+.node.status-active::before {
+    background: var(--accent-green);
+}
+.node.status-active::after {
+    background: var(--accent-green);
+    border-color: var(--accent-green);
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+}
+.node.status-active .node-content {
+    border-color: rgba(16, 185, 129, 0.3);
+    background: rgba(16, 185, 129, 0.02);
+}
+
+/* Content typography */
+.node-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+}
+
+.node-date {
+    color: var(--text-secondary);
+}
+
+.node-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.payload-list {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.payload-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.payload-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 4px;
+    height: 4px;
+    background: var(--text-secondary);
+}
+
+/* Tag styles */
+.tag-t, .tag-p {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    padding: 0.1rem 0.4rem;
+    margin-right: 0.5rem;
+    border: 1px solid;
+    text-transform: uppercase;
+}
+
+.tag-t { color: #60a5fa; border-color: rgba(96, 165, 250, 0.3); }
+.tag-p { color: #c084fc; border-color: rgba(192, 132, 252, 0.3); }
+
+/* Control */
+.control-switch {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-top: 1px solid var(--border-dim);
+    padding-top: 1.5rem;
+}
+
+.toggle-input {
+    appearance: none;
+    width: 40px;
+    height: 20px;
+    background: var(--border-dim);
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.3s;
+}
+
+.toggle-input::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background: var(--text-secondary);
+    border-radius: 50%;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s;
+}
+
+.toggle-input:checked {
+    background: rgba(16, 185, 129, 0.2);
+    border: 1px solid var(--accent-green);
+}
+
+.toggle-input:checked::after {
+    transform: translateX(20px);
+    background: var(--accent-green);
+}
+
+.toggle-label {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.sys-footer {
+    margin-top: 5rem;
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.1em;
+}
+
+@media (max-width: 600px) {
+    h1 { font-size: 2rem; }
+    .layout { padding: 2rem 1rem; }
+    .data-bus { padding-left: 2rem; }
+    .node::before { left: -2rem; width: 2rem; }
+    .node::after { left: -2rem; }
+    .node-content { padding: 1.5rem; }
+}
