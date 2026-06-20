@@ -12,15 +12,25 @@
 </head>
 <body>
     <div class="grid-overlay"></div>
-    
-    <div class="layout">
+
+    <div class="layout" id="main-layout">
         <header class="sys-header">
-            <div class="badge">SYS.BOOT // 2026.07.20</div>
+            <div class="header-top">
+                <div class="badge">SYS.BOOT // 2026.07.20</div>
+                <div class="user-profile">
+                    <span id="user-name">MODO LOCAL // OFFLINE</span>
+                    <div class="sync-actions">
+                        <button id="export-btn" class="action-btn" title="Exportar progreso">[ EXPORTAR ]</button>
+                        <button id="import-btn" class="action-btn" title="Importar progreso">[ IMPORTAR ]</button>
+                        <input type="file" id="import-file" style="display: none;" accept=".json">
+                    </div>
+                </div>
+            </div>
             <h1>ARQUITECTURA DE COMPUTADORAS</h1>
             <p class="subtitle">Protocolo de estudio intensivo para examen final.</p>
             
             <div class="metrics">
-                <div class="metric-label">INTEGRIDAD DE DATOS</div>
+                <div class="metric-label">INTEGRIDAD DE DATOS TOTAL</div>
                 <div class="progress-track">
                     <div class="progress-fill" id="progress-bar"></div>
                 </div>

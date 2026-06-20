@@ -1,132 +1,166 @@
+// =========================================================================
+// DATOS DEL CRONOGRAMA
+// =========================================================================
 const scheduleData = [
     {
-        day: 1,
-        date: "20.07.26",
-        title: "Fundamentos y Sistemas Numéricos",
-        teoria: ["Unidad 1: Representación de Datos", "Números Signados", "Punto Flotante"],
-        practica: ["Práctica 1: Sistemas Numéricos"],
-        completed: false
+        day: 1, date: "20.07.26", title: "Fundamentos y Sistemas Numéricos",
+        tasks: [
+            { id: "1_t1", type: "t", text: "Unidad 1: Representación de Datos" },
+            { id: "1_t2", type: "t", text: "Números Signados" },
+            { id: "1_t3", type: "t", text: "Punto Flotante" },
+            { id: "1_p1", type: "p", text: "Práctica 1: Sistemas Numéricos" }
+        ]
     },
     {
-        day: 2,
-        date: "21.07.26",
-        title: "Repaso de Unidades de Medida",
-        teoria: [],
-        practica: ["Práctica 2", "Práctica 2.1", "Práctica 2.2", "Práctica 2.3"],
-        completed: false
+        day: 2, date: "21.07.26", title: "Repaso de Unidades de Medida",
+        tasks: [
+            { id: "2_p1", type: "p", text: "Práctica 2" },
+            { id: "2_p2", type: "p", text: "Práctica 2.1" },
+            { id: "2_p3", type: "p", text: "Práctica 2.2" },
+            { id: "2_p4", type: "p", text: "Práctica 2.3" }
+        ]
     },
     {
-        day: 3,
-        date: "22.07.26",
-        title: "Lógica y Álgebra",
-        teoria: ["Unidad 2: Circuitos Lógicos", "Propiedades del Álgebra de Boole", "Mapas de Karnaugh"],
-        practica: [],
-        completed: false
+        day: 3, date: "22.07.26", title: "Lógica y Álgebra",
+        tasks: [
+            { id: "3_t1", type: "t", text: "Unidad 2: Circuitos Lógicos" },
+            { id: "3_t2", type: "t", text: "Propiedades del Álgebra de Boole" },
+            { id: "3_t3", type: "t", text: "Mapas de Karnaugh" }
+        ]
     },
     {
-        day: 4,
-        date: "23.07.26",
-        title: "Práctica Lógica",
-        teoria: [],
-        practica: ["Práctica 3: Boole", "Práctica 4: Karnaugh"],
-        completed: false
+        day: 4, date: "23.07.26", title: "Práctica Lógica",
+        tasks: [
+            { id: "4_p1", type: "p", text: "Práctica 3: Boole" },
+            { id: "4_p2", type: "p", text: "Práctica 4: Karnaugh" }
+        ]
     },
     {
-        day: 5,
-        date: "24.07.26",
-        title: "Circuitos Combinacionales",
-        teoria: ["Unidad 3: Circuitos Digitales Combinacionales", "Circuito Sumador", "Multiplexor"],
-        practica: [],
-        completed: false
+        day: 5, date: "24.07.26", title: "Circuitos Combinacionales",
+        tasks: [
+            { id: "5_t1", type: "t", text: "Unidad 3: Circuitos Digitales Combinacionales" },
+            { id: "5_t2", type: "t", text: "Circuito Sumador" },
+            { id: "5_t3", type: "t", text: "Multiplexor" }
+        ]
     },
     {
-        day: 6,
-        date: "25.07.26",
-        title: "Circuitos Secuenciales y Memoria",
-        teoria: ["Unidad 3: Circuitos Secuenciales (Flip Flop)", "Registros y Contadores", "Memorias ROM y RAM"],
-        practica: [],
-        completed: false
+        day: 6, date: "25.07.26", title: "Circuitos Secuenciales y Memoria",
+        tasks: [
+            { id: "6_t1", type: "t", text: "Unidad 3: Circuitos Secuenciales (Flip Flop)" },
+            { id: "6_t2", type: "t", text: "Registros y Contadores" },
+            { id: "6_t3", type: "t", text: "Memorias ROM y RAM" }
+        ]
     },
     {
-        day: 7,
-        date: "26.07.26",
-        title: "Práctica de Circuitos",
-        teoria: [],
-        practica: ["Práctica 5: Circuitos", "Práctica 6: Memorias"],
-        completed: false
+        day: 7, date: "26.07.26", title: "Práctica de Circuitos",
+        tasks: [
+            { id: "7_p1", type: "p", text: "Práctica 5: Circuitos" },
+            { id: "7_p2", type: "p", text: "Práctica 6: Memorias" }
+        ]
     },
     {
-        day: 8,
-        date: "27.07.26",
-        title: "Arquitectura Interna",
-        teoria: ["Unidad 4: Estructura del Computador", "Dispositivos de Almacenamiento", "Registros Internos e Instrucciones"],
-        practica: [],
-        completed: false
+        day: 8, date: "27.07.26", title: "Arquitectura Interna",
+        tasks: [
+            { id: "8_t1", type: "t", text: "Unidad 4: Estructura del Computador" },
+            { id: "8_t2", type: "t", text: "Dispositivos de Almacenamiento" },
+            { id: "8_t3", type: "t", text: "Registros Internos e Instrucciones" }
+        ]
     },
     {
-        day: 9,
-        date: "28.07.26",
-        title: "El Procesador y Ensamblador",
-        teoria: ["Unidad 5: Estructura del Procesador", "Lenguaje Ensamblador"],
-        practica: ["Práctica 7: Assembler"],
-        completed: false
+        day: 9, date: "28.07.26", title: "El Procesador y Ensamblador",
+        tasks: [
+            { id: "9_t1", type: "t", text: "Unidad 5: Estructura del Procesador" },
+            { id: "9_t2", type: "t", text: "Lenguaje Ensamblador" },
+            { id: "9_p1", type: "p", text: "Práctica 7: Assembler" }
+        ]
     },
     {
-        day: 10,
-        date: "29.07.26",
-        title: "Interrupciones y Microcódigo",
-        teoria: ["Unidad 5: Interrupciones", "Microcódigo"],
-        practica: ["Práctica 8: Interrupciones"],
-        completed: false
+        day: 10, date: "29.07.26", title: "Interrupciones y Microcódigo",
+        tasks: [
+            { id: "10_t1", type: "t", text: "Unidad 5: Interrupciones" },
+            { id: "10_t2", type: "t", text: "Microcódigo" },
+            { id: "10_p1", type: "p", text: "Práctica 8: Interrupciones" }
+        ]
     },
     {
-        day: 11,
-        date: "30.07.26",
-        title: "Interfaces y Arquitecturas",
-        teoria: ["Unidad 6: Interfaz de Entrada/Salida", "Unidad 7: Traductores de Lenguaje", "Arquitectura CISC y RISC"],
-        practica: [],
-        completed: false
+        day: 11, date: "30.07.26", title: "Interfaces y Arquitecturas",
+        tasks: [
+            { id: "11_t1", type: "t", text: "Unidad 6: Interfaz de Entrada/Salida" },
+            { id: "11_t2", type: "t", text: "Unidad 7: Traductores de Lenguaje" },
+            { id: "11_t3", type: "t", text: "Arquitectura CISC y RISC" }
+        ]
     },
     {
-        day: 12,
-        date: "31.07.26",
-        title: "Sistemas Operativos",
-        teoria: ["Conceptos de SO"],
-        practica: ["Revisión de Parciales Anteriores"],
-        completed: false
+        day: 12, date: "31.07.26", title: "Sistemas Operativos",
+        tasks: [
+            { id: "12_t1", type: "t", text: "Conceptos de SO" },
+            { id: "12_p1", type: "p", text: "Revisión de Parciales Anteriores" }
+        ]
     },
     {
-        day: 13,
-        date: "01.08.26",
-        title: "Simulacro Final",
-        teoria: ["Repaso General de Conceptos Clave"],
-        practica: ["Simulacro de Examen / Dudas"],
-        completed: false
+        day: 13, date: "01.08.26", title: "Simulacro Final",
+        tasks: [
+            { id: "13_t1", type: "t", text: "Repaso General de Conceptos Clave" },
+            { id: "13_p1", type: "p", text: "Simulacro de Examen / Dudas" }
+        ]
     }
 ];
 
-document.addEventListener('DOMContentLoaded', () => {
-    const container = document.getElementById('schedule-container');
-    const progressBar = document.getElementById('progress-bar');
-    const progressText = document.getElementById('progress-text');
+// Estado global de progreso
+let userProgress = {};
 
-    const savedProgress = JSON.parse(localStorage.getItem('arqCompData')) || {};
+// =========================================================================
+// INICIALIZACIÓN
+// =========================================================================
+document.addEventListener('DOMContentLoaded', () => {
+    // Cargar del LocalStorage
+    const savedProgress = localStorage.getItem('arqCompDataV2');
+    if (savedProgress) {
+        userProgress = JSON.parse(savedProgress);
+    }
+
+    renderSchedule();
+    updateProgressUI();
+
+    // Listeners Exportar/Importar
+    document.getElementById('export-btn').addEventListener('click', exportProgress);
+    document.getElementById('import-btn').addEventListener('click', () => {
+        document.getElementById('import-file').click();
+    });
+    document.getElementById('import-file').addEventListener('change', importProgress);
+});
+
+// =========================================================================
+// RENDERIZADO DE UI
+// =========================================================================
+function renderSchedule() {
+    const container = document.getElementById('schedule-container');
+    container.innerHTML = ''; // Limpiar
     
     scheduleData.forEach((dayData) => {
-        if (savedProgress[dayData.day] !== undefined) {
-            dayData.completed = savedProgress[dayData.day];
-        }
-
         const node = document.createElement('div');
-        node.className = `node ${dayData.completed ? 'status-active' : ''}`;
+        
+        // Calcular progreso del día
+        const totalTasks = dayData.tasks.length;
+        const completedTasks = dayData.tasks.filter(t => userProgress[t.id]).length;
+        const isDayCompleted = totalTasks > 0 && completedTasks === totalTasks;
+        
+        node.className = `node ${isDayCompleted ? 'status-active' : ''}`;
+        
+        const hasTeoria = dayData.tasks.some(t => t.type === 't');
+        const hasPractica = dayData.tasks.some(t => t.type === 'p');
         
         let tagsHtml = '';
-        if (dayData.teoria.length > 0) tagsHtml += '<span class="tag-t">Teoría</span>';
-        if (dayData.practica.length > 0) tagsHtml += '<span class="tag-p">Práctica</span>';
+        if (hasTeoria) tagsHtml += '<span class="tag-t">Teoría</span>';
+        if (hasPractica) tagsHtml += '<span class="tag-p">Práctica</span>';
 
-        let listHtml = '';
-        dayData.teoria.forEach(item => listHtml += `<li>${item}</li>`);
-        dayData.practica.forEach(item => listHtml += `<li>${item}</li>`);
+        // Generar lista de sub-tareas
+        let tasksHtml = dayData.tasks.map(task => `
+            <label class="task-item">
+                <input type="checkbox" class="task-checkbox" data-task-id="${task.id}" ${userProgress[task.id] ? 'checked' : ''}>
+                <span class="task-text">${task.text}</span>
+            </label>
+        `).join('');
 
         node.innerHTML = `
             <div class="node-content">
@@ -135,53 +169,96 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="node-tags">${tagsHtml}</div>
                 </div>
                 <h3 class="node-title">${dayData.title}</h3>
-                <ul class="payload-list">
-                    ${listHtml}
-                </ul>
-                <div class="control-switch">
-                    <input type="checkbox" class="toggle-input" id="switch-${dayData.day}" ${dayData.completed ? 'checked' : ''}>
-                    <label for="switch-${dayData.day}" class="toggle-label">
-                        ${dayData.completed ? 'SECTOR COMPLETADO' : 'INICIAR SECTOR'}
-                    </label>
+                <div class="payload-list">
+                    ${tasksHtml}
                 </div>
             </div>
         `;
 
-        const checkbox = node.querySelector(`#switch-${dayData.day}`);
-        const label = node.querySelector(`.toggle-label`);
-
-        checkbox.addEventListener('change', (e) => {
-            dayData.completed = e.target.checked;
-            if(dayData.completed) {
-                node.classList.add('status-active');
-                label.textContent = 'SECTOR COMPLETADO';
-            } else {
-                node.classList.remove('status-active');
-                label.textContent = 'INICIAR SECTOR';
-            }
-            saveProgress();
-            updateProgress();
+        // Event Listeners para cada checkbox
+        const checkboxes = node.querySelectorAll('.task-checkbox');
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', (e) => {
+                const taskId = e.target.getAttribute('data-task-id');
+                const isChecked = e.target.checked;
+                userProgress[taskId] = isChecked;
+                
+                updateProgressUI();
+                saveProgressLocal();
+            });
         });
 
         container.appendChild(node);
     });
+}
 
-    function saveProgress() {
-        const progressObj = {};
-        scheduleData.forEach(d => {
-            progressObj[d.day] = d.completed;
-        });
-        localStorage.setItem('arqCompData', JSON.stringify(progressObj));
-    }
+function updateProgressUI() {
+    const container = document.getElementById('schedule-container');
+    
+    let totalTasksGlobal = 0;
+    let completedTasksGlobal = 0;
 
-    function updateProgress() {
-        const completedDays = scheduleData.filter(d => d.completed).length;
-        const totalDays = scheduleData.length;
-        const percentage = (completedDays / totalDays * 100).toFixed(1);
+    scheduleData.forEach((dayData, index) => {
+        const dayTotal = dayData.tasks.length;
+        const dayCompleted = dayData.tasks.filter(t => userProgress[t.id]).length;
         
-        progressBar.style.width = `${percentage}%`;
-        progressText.textContent = `${percentage}%`;
-    }
+        totalTasksGlobal += dayTotal;
+        completedTasksGlobal += dayCompleted;
 
-    updateProgress();
-});
+        // Actualizar clase del nodo (Día completado)
+        const nodeEl = container.children[index];
+        if (nodeEl) {
+            if (dayTotal > 0 && dayCompleted === dayTotal) {
+                nodeEl.classList.add('status-active');
+            } else {
+                nodeEl.classList.remove('status-active');
+            }
+        }
+    });
+
+    const percentage = totalTasksGlobal === 0 ? 0 : (completedTasksGlobal / totalTasksGlobal * 100).toFixed(1);
+    
+    document.getElementById('progress-bar').style.width = `${percentage}%`;
+    document.getElementById('progress-text').textContent = `${percentage}%`;
+}
+
+// =========================================================================
+// ALMACENAMIENTO Y SINCRONIZACIÓN LOCAL
+// =========================================================================
+function saveProgressLocal() {
+    localStorage.setItem('arqCompDataV2', JSON.stringify(userProgress));
+}
+
+// Exportar: Crea un archivo JSON descargable
+function exportProgress() {
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(userProgress));
+    const downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute("href", dataStr);
+    downloadAnchorNode.setAttribute("download", "progreso_arquitectura.json");
+    document.body.appendChild(downloadAnchorNode); // requerimiento en firefox
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
+}
+
+// Importar: Lee un archivo JSON seleccionado
+function importProgress(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        try {
+            const importedData = JSON.parse(e.target.result);
+            userProgress = importedData;
+            saveProgressLocal();
+            renderSchedule();
+            updateProgressUI();
+            alert("✅ Progreso importado correctamente.");
+        } catch (error) {
+            alert("❌ Archivo inválido o corrupto.");
+        }
+    };
+    reader.readAsText(file);
+    // Limpiar input para permitir importar el mismo archivo de nuevo si se necesita
+    event.target.value = '';
+}
