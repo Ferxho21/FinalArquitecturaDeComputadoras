@@ -123,9 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     document.getElementById('import-file').addEventListener('change', importProgress);
 
-    // Pomodoro Listeners
-    document.getElementById('pomodoro-start').addEventListener('click', togglePomodoro);
-    document.getElementById('pomodoro-reset').addEventListener('click', resetPomodoro);
 });
 
 // =========================================================================
@@ -259,51 +256,4 @@ function importProgress(event) {
     reader.readAsText(file);
     // Limpiar input para permitir importar el mismo archivo de nuevo si se necesita
     event.target.value = '';
-}
-
-// =========================================================================
-// POMODORO TIMER
-// =========================================================================
-let pomodoroInterval;
-let pomodoroTime = 25 * 60; // 25 minutes in seconds
-let isPomodoroRunning = false;
-
-function togglePomodoro() {
-    const startBtn = document.getElementById('pomodoro-start');
-    if (isPomodoroRunning) {
-        clearInterval(pomodoroInterval);
-        startBtn.textContent = '[ CONTINUAR ]';
-    } else {
-        pomodoroInterval = setInterval(updatePomodoro, 1000);
-        startBtn.textContent = '[ PAUSAR ]';
-    }
-    isPomodoroRunning = !isPomodoroRunning;
-}
-
-function updatePomodoro() {
-    if (pomodoroTime > 0) {
-        pomodoroTime--;
-        displayPomodoro();
-    } else {
-        clearInterval(pomodoroInterval);
-        isPomodoroRunning = false;
-        document.getElementById('pomodoro-start').textContent = '[ INICIAR POMODORO ]';
-        alert("¡Pomodoro completado! Toma un descanso.");
-        resetPomodoro();
-    }
-}
-
-function resetPomodoro() {
-    clearInterval(pomodoroInterval);
-    isPomodoroRunning = false;
-    pomodoroTime = 25 * 60;
-    displayPomodoro();
-    document.getElementById('pomodoro-start').textContent = '[ INICIAR POMODORO ]';
-}
-
-function displayPomodoro() {
-    const minutes = Math.floor(pomodoroTime / 60);
-    const seconds = pomodoroTime % 60;
-    document.getElementById('pomodoro-time').textContent = 
-        `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 }

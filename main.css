@@ -318,26 +318,3 @@ h1 {
     color: var(--text-muted);
     font-size: 0.85rem;
 }
-
-/* Pomodoro Timer */
-.pomodoro-timer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--surface-hover);
-    padding: 1rem;
-    border: 1px solid var(--border-color);
-    margin-bottom: 1.5rem;
-}
-
-.pomodoro-display {
-    font-family: var(--font-mono);
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--primary-accent);
-}
-
-.pomodoro-controls {
-    display: flex;
-    gap: 1rem;
-}
