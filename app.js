@@ -3,104 +3,98 @@
 // =========================================================================
 const scheduleData = [
     {
-        day: 1, date: "20.07.26", title: "Fundamentos y Sistemas Numéricos",
+        day: 1, date: "20.07.26", title: "Sistemas Numéricos (Parte 1)",
         tasks: [
-            { id: "1_t1", type: "t", text: "Unidad 1: Representación de Datos" },
-            { id: "1_t2", type: "t", text: "Números Signados" },
-            { id: "1_t3", type: "t", text: "Punto Flotante" },
+            { id: "1_t1", type: "t", text: "Unidad 1: Representación de Datos (Lectura 1/2 - ~40 págs)" },
             { id: "1_p1", type: "p", text: "Práctica 1: Sistemas Numéricos" }
         ]
     },
     {
-        day: 2, date: "21.07.26", title: "Repaso de Unidades de Medida",
+        day: 2, date: "21.07.26", title: "Sistemas Numéricos (Parte 2)",
         tasks: [
-            { id: "2_p1", type: "p", text: "Práctica 2" },
-            { id: "2_p2", type: "p", text: "Práctica 2.1" },
-            { id: "2_p3", type: "p", text: "Práctica 2.2" },
-            { id: "2_p4", type: "p", text: "Práctica 2.3" }
+            { id: "2_t1", type: "t", text: "Unidad 1: Representación de Datos (Lectura 2/2 - ~38 págs)" },
+            { id: "2_t2", type: "t", text: "Números Signados y Punto Flotante" },
+            { id: "2_p1", type: "p", text: "Práctica 2: Unidades (2 y 2.1)" }
         ]
     },
     {
-        day: 3, date: "22.07.26", title: "Lógica y Álgebra",
+        day: 3, date: "22.07.26", title: "Lógica: Circuitos y Boole",
         tasks: [
-            { id: "3_t1", type: "t", text: "Unidad 2: Circuitos Lógicos" },
+            { id: "3_t1", type: "t", text: "Unidad 2: Circuitos Lógicos (42 págs)" },
             { id: "3_t2", type: "t", text: "Propiedades del Álgebra de Boole" },
-            { id: "3_t3", type: "t", text: "Mapas de Karnaugh" }
+            { id: "3_p1", type: "p", text: "Práctica 2: Unidades (2.2 y 2.3)" }
         ]
     },
     {
-        day: 4, date: "23.07.26", title: "Práctica Lógica",
+        day: 4, date: "23.07.26", title: "Mapas de Karnaugh y Práctica",
         tasks: [
+            { id: "4_t1", type: "t", text: "Mapas de Karnaugh (Teoría)" },
             { id: "4_p1", type: "p", text: "Práctica 3: Boole" },
             { id: "4_p2", type: "p", text: "Práctica 4: Karnaugh" }
         ]
     },
     {
-        day: 5, date: "24.07.26", title: "Circuitos Combinacionales",
+        day: 5, date: "24.07.26", title: "Circuitos Combinacionales y Secuenciales",
         tasks: [
-            { id: "5_t1", type: "t", text: "Unidad 3: Circuitos Digitales Combinacionales" },
-            { id: "5_t2", type: "t", text: "Circuito Sumador" },
-            { id: "5_t3", type: "t", text: "Multiplexor" }
+            { id: "5_t1", type: "t", text: "Unidad 3: Circuitos Combinacionales (25 págs)" },
+            { id: "5_t2", type: "t", text: "Unidad 3: Circuitos Secuenciales - Flip Flop (12 págs)" }
         ]
     },
     {
-        day: 6, date: "25.07.26", title: "Circuitos Secuenciales y Memoria",
+        day: 6, date: "25.07.26", title: "Registros, Contadores y Memorias",
         tasks: [
-            { id: "6_t1", type: "t", text: "Unidad 3: Circuitos Secuenciales (Flip Flop)" },
-            { id: "6_t2", type: "t", text: "Registros y Contadores" },
-            { id: "6_t3", type: "t", text: "Memorias ROM y RAM" }
+            { id: "6_t1", type: "t", text: "Unidad 3: Registros y Contadores (22 págs)" },
+            { id: "6_t2", type: "t", text: "Unidad 3: Memorias ROM y RAM (28 págs)" }
         ]
     },
     {
-        day: 7, date: "26.07.26", title: "Práctica de Circuitos",
+        day: 7, date: "26.07.26", title: "Práctica de Circuitos y Memorias",
         tasks: [
             { id: "7_p1", type: "p", text: "Práctica 5: Circuitos" },
             { id: "7_p2", type: "p", text: "Práctica 6: Memorias" }
         ]
     },
     {
-        day: 8, date: "27.07.26", title: "Arquitectura Interna",
+        day: 8, date: "27.07.26", title: "Almacenamiento (Día Pesado 1)",
         tasks: [
-            { id: "8_t1", type: "t", text: "Unidad 4: Estructura del Computador" },
-            { id: "8_t2", type: "t", text: "Dispositivos de Almacenamiento" },
-            { id: "8_t3", type: "t", text: "Registros Internos e Instrucciones" }
+            { id: "8_t1", type: "t", text: "Unidad 4: Dispositivos de Almacenamiento (Lectura 1/2 - ~35 págs)" }
         ]
     },
     {
-        day: 9, date: "28.07.26", title: "El Procesador y Ensamblador",
+        day: 9, date: "28.07.26", title: "Almacenamiento (Día Pesado 2)",
         tasks: [
-            { id: "9_t1", type: "t", text: "Unidad 5: Estructura del Procesador" },
-            { id: "9_t2", type: "t", text: "Lenguaje Ensamblador" },
-            { id: "9_p1", type: "p", text: "Práctica 7: Assembler" }
+            { id: "9_t1", type: "t", text: "Unidad 4: Dispositivos de Almacenamiento (Lectura 2/2 - ~33 págs)" },
+            { id: "9_t2", type: "t", text: "Unidad 4: Instrucciones (9 págs)" }
         ]
     },
     {
-        day: 10, date: "29.07.26", title: "Interrupciones y Microcódigo",
+        day: 10, date: "29.07.26", title: "Registros Internos del Procesador",
         tasks: [
-            { id: "10_t1", type: "t", text: "Unidad 5: Interrupciones" },
-            { id: "10_t2", type: "t", text: "Microcódigo" },
-            { id: "10_p1", type: "p", text: "Práctica 8: Interrupciones" }
+            { id: "10_t1", type: "t", text: "Unidad 4: Registros Internos (Lectura 1/2 - ~30 págs)" },
+            { id: "10_t2", type: "t", text: "Unidad 4: Registros Internos (Lectura 2/2 - ~27 págs)" }
         ]
     },
     {
-        day: 11, date: "30.07.26", title: "Interfaces y Arquitecturas",
+        day: 11, date: "30.07.26", title: "Estructura del Procesador y Assembler",
         tasks: [
-            { id: "11_t1", type: "t", text: "Unidad 6: Interfaz de Entrada/Salida" },
-            { id: "11_t2", type: "t", text: "Unidad 7: Traductores de Lenguaje" },
-            { id: "11_t3", type: "t", text: "Arquitectura CISC y RISC" }
+            { id: "11_t1", type: "t", text: "Unidad 5: Estructura del Procesador (19 págs)" },
+            { id: "11_t2", type: "t", text: "Unidad 5: Lenguaje Ensamblador (27 págs)" },
+            { id: "11_p1", type: "p", text: "Práctica 7: Assembler" }
         ]
     },
     {
-        day: 12, date: "31.07.26", title: "Sistemas Operativos",
+        day: 12, date: "31.07.26", title: "Interrupciones, Microcódigo e I/O",
         tasks: [
-            { id: "12_t1", type: "t", text: "Conceptos de SO" },
-            { id: "12_p1", type: "p", text: "Revisión de Parciales Anteriores" }
+            { id: "12_t1", type: "t", text: "Unidad 5: Interrupciones (23 págs) y Microcódigo (11 págs)" },
+            { id: "12_t2", type: "t", text: "Unidad 6: Interfaz de Entrada/Salida (38 págs)" },
+            { id: "12_p1", type: "p", text: "Práctica 8: Interrupciones" }
         ]
     },
     {
-        day: 13, date: "01.08.26", title: "Simulacro Final",
+        day: 13, date: "01.08.26", title: "Arquitecturas, SO y Repaso Final",
         tasks: [
-            { id: "13_t1", type: "t", text: "Repaso General de Conceptos Clave" },
+            { id: "13_t1", type: "t", text: "Unidad 7: Traductores (8) y CISC/RISC (18 págs)" },
+            { id: "13_t2", type: "t", text: "Sistemas Operativos (31 págs)" },
             { id: "13_p1", type: "p", text: "Simulacro de Examen / Dudas" }
         ]
     }
